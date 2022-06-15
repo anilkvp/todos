@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="lead">{{ item.name }} </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <i>{{ item.description }} </i>
+        </div>
+    </div>
+    <a href="{{request.META.HTTP_REFERER|escape}}" role="button" class="btn btn-primary" >Back</a>
+</div>
+{% endblock %}
+

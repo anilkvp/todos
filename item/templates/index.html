@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" href="/item/add/" role="button"> Add </a>
+        </div>
+    </div>
+    <div class="row">
+    {% if item_list %}
+        <table class="table table-striped">
+            <thead>
+                <th>#</th>
+                <th>Completed</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+            {% for item in item_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="completed" />
+                    </div>
+                </td>
+                <td> <a href="/item/details/{{ item.id }}">{{ item.name }}</a></td>
+                <td>{{ item.description }} </td>
+                <td><a class="btn btn-primary" href="/item/edit/{{ item.id }}" role="button">Edit</a></td>
+                <td><a class="btn btn-danger" href="/item/delete/{{ item.id }}" role="button">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
