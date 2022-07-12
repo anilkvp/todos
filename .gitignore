@@ -1,2 +1,9 @@
 .idea/
 *.pyc
+bin/
+pyvenv.cfg
+lib
+lib64
+db.sqlite3
+include
+geckodriver.log
